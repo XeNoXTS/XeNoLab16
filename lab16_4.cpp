@@ -17,3 +17,16 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a, int &b, int &c, int &d){
+	int wallet[] = {a, b, c, d};
+	int n = sizeof(wallet)/sizeof(int);
+	for(int i = 0; i < n; i++){
+		int x = rand()%4;
+		int y = rand()%4;
+		int temp = wallet[x];
+		wallet[x] = wallet[y];
+		wallet[y] = temp;
+	}
+	a = wallet[0],b = wallet[1], c = wallet[2], d = wallet[3];
+}
